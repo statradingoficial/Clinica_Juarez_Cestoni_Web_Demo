@@ -1,0 +1,591 @@
+/* Colores base */
+:root {
+    --primary-color: #007BFF; /* Azul para botones y acentos */
+    --secondary-color: #6C757D; /* Gris para botones secundarios */
+    --accent-color: #28A745; /* Verde para WhatsApp o confirmaciones */
+    --text-dark: #343A40;
+    --text-light: #F8F9FA;
+    --bg-light: #F8F9FA; /* Fondo claro para secciones */
+    --bg-white: #FFFFFF;
+    --border-color: #DEE2E6;
+}
+
+/* Estilos Generales */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; text-align: center; margin-bottom: 40px;}
+h3 { font-size: 1.6em; }
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Botones */
+.btn-primary, .btn-secondary, .btn-whatsapp {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade of primary */
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.btn-whatsapp {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    margin-top: 20px;
+}
+
+.btn-whatsapp:hover {
+    background-color: #218838; /* Darker shade of accent */
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.btn-whatsapp i {
+    margin-right: 8px;
+}
+
+/* Header 
+header {
+    background-color: var(--bg-white);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}*/
+/* HEADER CON LOGO GRANDE Y ALTURA CONTROLADA */
+header {
+  background: radial-gradient(circle at center, #e7e7e8 0%, #dbdbdb 80%, #d8d8da 100%);
+  height: 150px;              /* igual al alto del logo */
+  display: flex;              /* para centrar verticalmente */
+  align-items: center;
+  border-bottom: none;
+  box-shadow: none;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0;                 /* quitamos el padding que agrandaba más */
+}
+
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* izquierda vs derecha */
+  height: 100%;
+  gap: 48px;                      /* separación entre bloque del logo y el menú */
+  padding: 0 24px;                /* margen interno lateral del header */
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;                      /* espacio entre imagen y texto */
+  flex: 0 0 auto;                 /* no se estira */
+}
+
+/* Asegura la tipografía original del nombre */
+.logo span {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;             /* ajústalo si lo quieres más grande/pequeño */
+  line-height: 1;                 /* alinea verticalmente con el logo */
+  color: var(--text-dark);
+  white-space: nowrap;            /* evita salto de línea en el nombre */
+}
+
+
+/* Imagen del logo (ya lo tienes a 150px en desktop) */
+.logo img {
+  height: 150px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 0;                /* lo controlamos con gap */
+}
+
+.logo img {
+  height: 150px;   /* ajusta a tu gusto: 80–100px suele verse bien */
+  width: auto;    /* conserva proporción */
+  object-fit: contain;
+  margin-right: 12px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* OPCIONAL: REDUCIR EL ESPACIADO ENTRE LOS ELEMENTOS DEL MENÚ */
+nav ul li {
+  margin-left: 25px;          /* antes 30px */
+}
+
+nav ul li a {
+    color: var(--text-dark);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+nav ul li .btn-primary {
+    padding: 8px 20px; /* Ajuste para botón en nav */
+    font-size: 0.9em;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+/* Hero Section */
+.hero {
+    /* Si tienes una imagen de fondo para el hero, usa esta línea: */
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('image/3.jpg') no-repeat center center/cover;
+    /* Si prefieres un color sólido o patrón sin imagen de fondo:
+    background-color: var(--bg-light); 
+    background-image: none; */
+    background-size: cover; 
+    background-position: center center; 
+    padding: 80px 0;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 3.5em;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.hero-text h2 {
+    font-size: 1.8em;
+    font-weight: 400;
+    margin-bottom: 25px;
+    color: var(--text-dark);
+    text-align: left; /* Ajuste para el h2 */
+}
+
+.hero-text p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.hero-actions .btn-primary {
+    margin-right: 20px;
+}
+
+.hero-image {
+    flex: 0.8;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Secciones Generales */
+section {
+    padding: 60px 0;
+}
+
+section.bg-light {
+    background-color: var(--bg-light);
+}
+
+.section-description {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+    font-size: 1.1em;
+    color: var(--secondary-color);
+}
+
+/* Why Us Section */
+#why-us h2, #services h2, #doctor h2, #contact h2 {
+    color: var(--primary-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.feature-item {
+    background-color: var(--bg-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item i {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+/* Services Section */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.service-item {
+    background-color: var(--bg-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.mt-4 {
+    margin-top: 40px;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Doctor Section */
+.doctor-profile {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--bg-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.doctor-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.doctor-bio h3 {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.doctor-bio h4 {
+    color: var(--secondary-color);
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* Contact Section */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.contact-info ul li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+}
+
+.contact-info strong {
+    color: var(--primary-color);
+}
+
+.map-link {
+    margin-top: 15px;
+}
+
+.map-link i {
+    margin-left: 8px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    box-sizing: border-box; /* Asegura que padding no aumente el width */
+}
+
+.contact-form textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+.contact-form button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* 🔹 NUEVO: ajustes para header y logo */
+    header {
+        height: 110px;            /* más compacto en móviles */
+    }
+
+    .logo img {
+        height: 72px; /* ya lo tenías, mantenemos este tamaño */
+    }
+
+    .header-content {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* 🔹 Resto de tus reglas originales */
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-text h1, .hero-text h2 {
+        text-align: center;
+    }
+
+    .hero-actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .hero-image {
+        margin-top: 40px;
+    }
+
+    .doctor-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .doctor-image img {
+        margin-bottom: 20px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;                     /* menos separación en móvil */
+        padding: 0 16px;
+    }
+
+    .logo img { height: 72px; }
+
+    .logo span {
+        font-size: 1.05rem;
+        margin-top: 4px;
+    }
+    .header-content {
+        flex-wrap: wrap;
+    }
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    #main-nav {
+        margin-left: auto;              /* empuja el menú hacia la derecha */
+    }
+
+    nav ul {
+        display: flex;
+        align-items: center;
+        gap: 36px;                      /* más separación entre items */
+    }
+
+    nav ul li { margin-left: 0; }     /* usamos gap en vez de margin */
+    nav ul li a { font-weight: 600; }
+
+    #main-nav.active {
+        display: block;
+    }
+
+    #main-nav ul {
+        flex-direction: column;
+        background-color: var(--bg-white);
+        border-top: 1px solid var(--border-color);
+        padding-top: 15px;
+    }
+
+    #main-nav ul li {
+        margin: 10px 0;
+    }
+    
+    #main-nav ul li a.btn-primary {
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero {
+        padding: 50px 0;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5em;
+    }
+    .hero-text h2 {
+        font-size: 1.4em;
+    }
+
+    .features-grid, .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
